@@ -1,0 +1,36 @@
+---
+const { title = 'Luxia Travel', description = 'Effortless luxury for the modern traveler.' } = Astro.props;
+---
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="stylesheet" href="/src/styles/base.css" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content="website" />
+  </head>
+  <body>
+    <header class="header container">
+      <div style="display:flex;justify-content:space-between;align-items:center">
+        <div class="brand">LUXIA</div>
+        <nav class="nav">
+          <a href="/">Home</a>
+          <a href="/destinations/">Destinations</a>
+          <a href="/accommodations/">Accommodations</a>
+          <a href="/how-it-works/">How It Works</a>
+          <a href="/about/">About</a>
+          <a href="/contact/">Contact</a>
+        </nav>
+      </div>
+    </header>
+    <main class="container">
+      <slot />
+    </main>
+    <footer class="footer container">
+      <div class="muted">© {new Date().getFullYear()} Luxia Travel · Unwind with style.</div>
+    </footer>
+  </body>
+</html>
